@@ -1,0 +1,18 @@
+.Question__container {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    width: 90%;
+    margin: 15px auto;
+}
+
+.Question__options {
+    text-align: left;
+    padding: 5px;
+    font-size: 10px;
+}
+
+.Question__content {
+    text-align: left;
+    padding: 5px;
+    font-size: 15px;
+}
