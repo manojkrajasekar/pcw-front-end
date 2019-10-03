@@ -20,3 +20,7 @@
 .PageNumber__box.highlight {
     background-color: lightgreen;
 }
+
+.PageNumber__box.disabled {
+    pointer-events: none;
+}
