@@ -149,7 +149,7 @@ const SampleData = {
                           "value": "No",
                           "attributes": []
                       }
-                  ]
+                  ],
               },
               {
                   "_id": "FC2",
@@ -1087,11 +1087,12 @@ const SampleData = {
                           "attributes": []
                       }
                   ],
-                  "derivedFrom": [
-                      [
-                          "FG1.A2"
-                      ]
-                  ]
+                "derivedFrom": [
+                    [
+                        "FG1.A2"
+                    ]
+                ],
+                  
               },
               {
                   "_id": "FRQ2",
@@ -1113,11 +1114,26 @@ const SampleData = {
                           "attributes": []
                       }
                   ],
+                //   "derivedFrom": [
+                //       [
+                //           "FG1.A2"
+                //       ]
+                //   ]
                   "derivedFrom": [
-                      [
-                          "FG1.A2"
-                      ]
-                  ]
+                    [
+                        "FG1.A2",
+                        "FG2.A1",
+                        "FC1.A1",
+                    ],
+                    [
+                        "FG1.A1",
+                        "FG3.A1"
+                    ],
+                    [
+                        "FG1.A1",
+                        "FG2.A6"
+                    ]
+                ]
               },
               {
                   "_id": "FRQ3",
@@ -1309,6 +1325,9 @@ const SampleData = {
   ],
   "_id": "F",
   "name": "Food",
+  "defaultAttrbiutes": [
+    "40","56","57","58","60","66","67","83","85","112","144","161","1025","2186","2794","3508","3517","3541","3721","3725","3739","3777","3908"
+  ],
   "derivedAttributes": [
       {
           "relation": [

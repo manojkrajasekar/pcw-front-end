@@ -4,17 +4,31 @@ import Questions from '../Questions';
 import { connect } from 'react-redux';
 import './styles.css';
 
-
-
 class Pages extends React.Component {
     render() {
-        console.log('PAGE PROPS:', this.props.pageData);
-        console.log('PAGE DATA:', this.props.answersData);
         return (
             <div className="Page__Container">
-                {this.props.pageData.questions.map((item, index) => {
-                    return <Questions key={index} data={item}/>
-                })}
+                {this.props.dispalyFinalPage ?
+                    (
+                        <div className="Page__attributes">
+                            {this.props.finalPageData.map((element) => {
+                                return <div>#{element}</div>
+                            })}
+                        </div>
+                    ):(
+                        <React.Fragment>
+                            {this.props.pageData.questions.map((item, index) => {
+                                return <Questions 
+                                            key={index} 
+                                            data={item} 
+                                            updateAnswers={this.props.updateAnswers}
+                                            displayErrorMessage={this.props.displayErrorMessage}
+                                            shouldDisplayError={this.props.shouldDisplayError}
+                                        />
+                            })}
+                        </React.Fragment>
+                    )
+                }
             </div>
         )
     }

@@ -1,10 +1,23 @@
+.HomePage {
+    position: static;
+}
+
 .HomePage__footer {
-    position: relative;
+    position: fixed;
     width: 100%;
     height: 0px;
-    top: 0;
-    bottom: 40;
+    top: 50;
+    bottom: 70;
     left: 0;
+}
+
+.Page__title {
+    position: fixed;
+    top:0;
+    bottom: 20;
+    right: 0;
+    left: 0;
+    
 }
 
 .PageNumber__box {
@@ -15,6 +28,7 @@
 
 .PageNumber__box:hover {
     cursor: pointer;
+    background-color: antiquewhite;
 }
 
 .PageNumber__box.highlight {
@@ -22,5 +36,30 @@
 }
 
 .PageNumber__box.disabled {
+    /* pointer-events: none; */
+}
+
+.PageNumber__box.noUserEvents {
     pointer-events: none;
 }
+
+.HomePage__Submit {
+    background-color: green;
+    color: white;
+    /* margin: 8px auto; */
+    margin: 5px auto;
+    padding: 5px;
+    border-radius: 5px;
+    width: 80px;
+    border: 1px solid white;
+}
+
+.HomePage__Submit:hover {
+    cursor: pointer;
+    
+}
+
+.HomePage__Submit.disabled {
+    background-color: red;
+}
+

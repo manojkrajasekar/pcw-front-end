@@ -1,17 +1,31 @@
-const pagesReducer = (state = [], action) => {
+const pagesReducer = (state = {}, action) => {
+    let dummyObj = {};
     if(action.type === 'SAVE_ANSWER') {
-        // console.log('PAGE REDUCER STATE:', state);
-        //console.log('PAGE REDUCER PAYLOAD:', action.payload);
-        // const modifiedData = [ ...action.payload.pageId, action.payload ];
-        // console.log('MODIFIED DATA:', modifiedData);
-        // if(state[action.payload.pageId] !== null) state[action.payload.pageId]
+        if(!state[action.payload.pageId]) {
+            state[action.payload.pageId] = [];
+            state[action.payload.pageId].push(action.payload);
+        } else {
+            const modifiedState = state[action.payload.pageId].filter((element) => {
+                if(element.questionId === action.payload.questionId) {
+                    element.answer = action.payload.answer;
+                    element.answerId = action.payload.answerId;
+                    return element;
+                } 
+            })
 
-        const dummyObj = {};
-        dummyObj[action.payload.pageId] = action.payload.pageId;
-
-        console.log('DUMMY OBJ:', dummyObj);
-        
-        return [ ...state, action.payload];
+            if(modifiedState.length > 0) {
+                let newState = state[action.payload.pageId].map((item) => {
+                    if(item.questionId === modifiedState[0].questionId) {
+                        item.answer = modifiedState[0].answer;
+                        return item;
+                    }
+                    return item;
+                })
+                state[action.payload.pageId] = newState;
+            } else {
+                state[action.payload.pageId].push(action.payload);
+            }
+        }
         return state;
     }
     return state;

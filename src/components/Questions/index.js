@@ -1,75 +1,151 @@
 import React from 'react';
 import './styles.css';
 
-import configureStore from '../../redux/store';
 import { saveAnswers } from '../../redux/actions';
 import { connect } from 'react-redux';
 
 class Questions extends React.Component {
-
-
     state = {
-        selectedOption: null
+        selectedOption: null,
+        questionsState: [],
     }
 
-    
+    handleOptionChange = (event, questionData, questionId, pageId) => {
+        console.log('ANSWER DATA:', questionData);
+        let answerId, attributes = [];
+        questionData.answers.filter((element) => {
+            if(element.value === event.target.value) {
+                answerId = element._id;
+                attributes = element.attributes;
+            };
+        })
 
-    handleOptionChange = (event, questionId, pageId) => {
-        const store = configureStore();
-        // store.dispatch({type: 'savePageData', payload: event.target.value})
-        this.props.saveAnswers({answer: event.target.value, questionId: questionId, pageId: pageId});
+        this.props.saveAnswers({
+            answer: event.target.value, 
+            questionId: questionId, 
+            pageId: pageId,
+            answerId: answerId,
+            attributes: attributes,
+        });
+
+        this.props.updateAnswers(this.props.questionsState);
         this.setState({
             selectedOption: event.target.value
         });
     }
 
-    isValueChecked = (id, answer) => {
+    isValueChecked = (pageId, id, answer) => {
         const questionsData = this.props.questionsState;
-        // let isChecked;
-        const isChecked = questionsData.some((element) => {
+        let isChecked = false;
+        isChecked = questionsData[pageId] && questionsData[pageId].some((element) => {
             if((element.questionId === id) && (element.answer === answer)) 
             {
                 return true;
             }
+            return false;
         })
         return isChecked;
     }
 
-    render() {
+    static getDerivedStateFromProps(props, state) {
+        
+        if(props.questionsState !== state.questionsState) {
+            return {
+                questionsState: props.questionsState,
+            };
+        }
 
-        const store = configureStore();
-        // console.log('PROPS DATA:', this.props.data);
-        // console.log('SELECTED OPTION:', this.state.selectedOption);
-        console.log('INTERNAL STATE:', this.props.questionsState);
+        return null;
+    } 
+
+    render() {
+        
         const questionsData = this.props.data;
-        console.log('QUESTIONS DATA:', questionsData);
-        return (
-            <div className="Question__container">
-                <div className="Question__content">
-                    {questionsData.value}
+        const questionStateData = this.props.questionsState;
+        const derivedFrom = this.props.data.derivedFrom && this.props.data.derivedFrom[0][0];
+        let answersArray = [];
+        
+        for(let key in questionStateData) {
+            questionStateData[key].map((element) => {
+                answersArray.push(element.answerId);
+            })
+        }
+        console.log('ANSWERS ARRAY:', answersArray)
+
+        let final = questionsData.derivedFrom && questionsData.derivedFrom.some((element) => {
+            return element.every((item) => {
+                return answersArray.indexOf(item) !== -1;
+            })  
+        })
+
+        questionsData['showDerived'] = final ? true : false;
+
+        // for(let key in questionStateData) {
+        //     console.log('STATE:', questionStateData[key]);
+        //     const isMatch = questionStateData[key].some((item) => {
+        //         return item.answerId === derivedFrom
+        //     });
+            
+        //     questionsData['showDerived'] = isMatch ? true : false; 
+        // }
+        console.log('QUESTION: ', questionsData);
+        
+        return questionsData.derivedFrom ?
+            ( 
+                questionsData.showDerived ? (
+                    <div className="Question__container">
+                    <div className="Question__content">
+                        {questionsData.value}
+                        {!this.props.shouldDisplayError && !this.props.displayErrorMessage.includes(questionsData._id) && 
+                            <span className="Question__errorMessage">Please select an option !</span>
+                        }
+                    </div>
+                   
+                    <div className="Question__options">
+                        {questionsData.answers.map((item, index) => {
+                            return (
+                                <div key={index}>
+                                    <input
+                                        type={questionsData.type}
+                                        name={this.props.data._id} 
+                                        value={item.value} 
+                                        checked={this.isValueChecked(questionsData.pageId, this.props.data._id, item.value)}
+                                        onChange={(event) => { this.handleOptionChange(event, this.props.data, this.props.data._id, questionsData.pageId)}}
+                                    />
+                                    <label>{item.value}</label>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
-                <div className="Question__options">
-                    {questionsData.answers.map((item, index) => {
-                        // console.log('QUESTIONS ITEM:', item);
-                        console.log('ITEM VALUE:', item.value)
+                ) : null 
+            ) : (
+                <div className="Question__container">
+                 <div className="Question__content">
+                     {questionsData.value}
+                     {!this.props.shouldDisplayError && !this.props.displayErrorMessage.includes(questionsData._id) && 
+                         <span className="Question__errorMessage">Please select an option !</span>
+                     }
+                 </div>
+                
+                 <div className="Question__options">
+                     {questionsData.answers.map((item, index) => {
                         return (
                             <div key={index}>
                                 <input
                                     type={questionsData.type}
-                                    // type={questionsData.type}
                                     name={this.props.data._id} 
                                     value={item.value} 
-                                    // checked={this.state.selectedOption === item.value}
-                                    checked={this.isValueChecked(this.props.data._id, item.value)}
-                                    onChange={(event) => { this.handleOptionChange(event, this.props.data._id, questionsData.pageId)}}
+                                    checked={this.isValueChecked(questionsData.pageId, this.props.data._id, item.value)}
+                                    onChange={(event) => { this.handleOptionChange(event, this.props.data, this.props.data._id, questionsData.pageId)}}
                                 />
                                 <label>{item.value}</label>
                             </div>
                         )
-                    })}
-                </div>
-            </div>
-        )
+                     })}
+                 </div>
+             </div>
+        );
     }
 }
 
@@ -87,4 +163,3 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Questions);
-// export default Questions;

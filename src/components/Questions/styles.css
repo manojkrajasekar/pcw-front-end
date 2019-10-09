@@ -14,5 +14,12 @@
 .Question__content {
     text-align: left;
     padding: 5px;
-    font-size: 15px;
+    font-size: 12px;
+}
+
+.Question__errorMessage {
+    color: #f67a7a;
+    text-align: left;
+    margin-left: 10px;
+    font-size: 12px;
 }
