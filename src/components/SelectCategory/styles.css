@@ -1,0 +1,21 @@
+.Select__category {
+    max-width: 40%;
+    margin: 10px auto; 
+}
+
+.Select__category--title {
+    margin-top: 40px;
+    font-size: 22px;
+}
+
+.link__questions {
+    border: .5px solid rgb(243, 231, 231);
+    border-radius: 5px;
+    padding: 3px 4px;
+    margin: 30px;
+    float: right;
+    text-decoration: none;
+    background-color: #3eb0f7;
+    color: white;
+}
+

@@ -1,5 +1,6 @@
 .Question__container {
     border: 1px solid lightgray;
+    background-color: #f0f0f0;
     border-radius: 10px;
     width: 90%;
     margin: 15px auto;

@@ -1,6 +1,8 @@
 import React from 'react';
 import Pages from '../Pages';
 import SampleData from '../../SampleData';
+import { Link } from 'react-router-dom';
+// import NewData from '../../NewData';
 // import validateAllQuestions from '../../utils/validateAllQuestions';
 import './styles.css';
 
@@ -159,10 +161,12 @@ class HomePage extends React.Component {
             <div className="HomePage">
                 <div className="Page__title">
                     {this.state.renderFinalPage 
-                        ? <div>Attributes</div>
-                        : <div>
+                        ? <div className="Page__title--content">
+                            Attributes
+                          </div>
+                        : <div className="Page__title--content">
                             {SampleData.pages[this.state.pageNumber].order}. {SampleData.pages[this.state.pageNumber].name}
-                        </div>
+                          </div>
                     }
                 </div>
                 <Pages 
@@ -173,8 +177,8 @@ class HomePage extends React.Component {
                     dispalyFinalPage={this.state.renderFinalPage}
                     finalPageData={this.state.collectedAttributes}
                 />
-                <div className="HomePage__footer">
-                    <div>
+                <div>
+                    <div className="HomePage__pagination">
                         {SampleData.pages.map((item, index) => {
                             const isCurrentPage = index === this.state.pageNumber ? true : false;
                             if(index < this.state.pageNumber) {
@@ -192,6 +196,13 @@ class HomePage extends React.Component {
                                 </span>
                             )
                         })}
+                    </div>
+                    <div className="HomePage__footer--actions">
+                        <Link 
+                            className="Select__Category"
+                            to="/select-category">
+                            Back to Home
+                        </Link>
                         <div 
                             className={`HomePage__Submit`}
                             onClick={() => { this.handleSubmit()}}

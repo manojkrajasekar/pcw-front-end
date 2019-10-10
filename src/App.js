@@ -2,6 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 
 import HomePage from './components/HomePage';
+import SelectCategory from './components/SelectCategory';
 import confirgureStore from './redux/store';
 
 import './App.css';
@@ -12,7 +13,8 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <HomePage />
+        
+        <SelectCategory />
       </div>
     </Provider>
   );
