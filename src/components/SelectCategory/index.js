@@ -7,12 +7,12 @@ import './styles.css';
 class SelectCategory extends React.Component {
 
     state = {
-        selectedOption: null,
+        itemCategory: null,
     }
 
     handleCategoryChange = (e, value)  => {
         this.setState({
-            selectedOption: value,
+            itemCategory: e.value,
         })
     } 
 

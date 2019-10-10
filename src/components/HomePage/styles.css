@@ -11,14 +11,6 @@
     left: 0;
 }
 
-/* .HomePage__pagination {
-    border: 1px solid black;
-} */
-
-/* .HomePage__footer {
-    border: 1px solid black;
-} */
-
 .Page__title {
     position: fixed;
     top:0;
@@ -28,7 +20,9 @@
 }
 
 .Page__title--content  {
+    padding: 3px;
     margin: 5px auto;
+    border-radius: 5px;
     width: 90%;
     color: white;
     background-color: #3eb0f7;
@@ -52,17 +46,17 @@
 }
 
 .PageNumber__box.disabled {
-    /* pointer-events: none; */
+    pointer-events: none;
 }
 
-.PageNumber__box.noUserEvents {
-    pointer-events: none;
+.PageNumber__box.disableUserEvents:hover {
+    background-color: white;
+    cursor: not-allowed;
 }
 
 .HomePage__Submit {
     background-color: #3eb0f7;
     color: white;
-    /* margin: 8px auto; */
     margin-right: 15px;
     margin-top: 3px;
     padding: 5px;
@@ -91,7 +85,6 @@
     background-color: #3eb0f7;
     color: white;
 }
-
 
 .HomePage__actions {
     border: 1px solid black;

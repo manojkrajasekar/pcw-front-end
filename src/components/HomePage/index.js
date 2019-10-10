@@ -182,15 +182,16 @@ class HomePage extends React.Component {
                         {SampleData.pages.map((item, index) => {
                             const isCurrentPage = index === this.state.pageNumber ? true : false;
                             if(index < this.state.pageNumber) {
-                                isDisabled = false;
+                               isDisabled = false;
                             }
-                            const noUserEvents = index - this.state.pageNumber <=1 ;
+                            const disableUserEvents = index - this.state.pageNumber <=1 ;
                             return (
                                 <span
+                                    title={`${!disableUserEvents ? `Finish Page ${this.state.pageNumber+1} to Continue`:'' }`}
                                     key={index}
                                     onClick={() => { this.renderNextPage(index) }} 
                                     className={`PageNumber__box ${isCurrentPage ? 'highlight': ' ' } ${isDisabled ? 'disabled': ' ' } 
-                                    ${!noUserEvents ? '':'' }`}
+                                    ${!disableUserEvents ? 'disableUserEvents':'' }`}
                                 >
                                     {index+1}
                                 </span>

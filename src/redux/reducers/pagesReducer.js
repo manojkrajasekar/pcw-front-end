@@ -1,5 +1,4 @@
 const pagesReducer = (state = {}, action) => {
-    let dummyObj = {};
     if(action.type === 'SAVE_ANSWER') {
         if(!state[action.payload.pageId]) {
             state[action.payload.pageId] = [];
