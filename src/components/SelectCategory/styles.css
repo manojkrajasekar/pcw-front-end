@@ -19,3 +19,86 @@
     color: white;
 }
 
+.Questions__Page--title {
+    
+    /* color: white;
+    background-color: #3eb0f7;
+    padding: 5px;
+    margin: 5px; */
+    display: flex;
+    justify-content: flex-start;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 60px;
+    background: #041E42 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #041E42;
+    /* background-image: url('../../assets/FirstQuestion.png'); */
+    opacity: 1;
+    
+}
+
+.Questions__Page--title > .Questions__Page--walmart {
+    width: 12%;
+    height: 50px;
+    margin-left: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* border: 1px solid red; */
+    background-image: url('../../assets/Walmart_Logos_Lockup_horiz_wht_rgb.png');
+    opacity: 1;
+}
+
+.Questions__Page--title > .Product__name {
+    margin-top: 13px;
+    width: 10%;
+    height: 50px;
+    font: Bold 19px/20px Roboto;
+    letter-spacing: 0;
+    color: #FBFBFB;
+    text-align: left;
+}
+
+.HomePage__Product {
+    margin: 0px auto 5px;
+    width: 100%;
+    height: 70px;
+    background-color: #0065FF;
+    display: flex;
+    justify-content: space-between;
+} 
+
+.HomePage__Product > .HomePage__product_info {
+    height: 70px;
+    width: 30%;
+    margin: 1px 80px;
+}
+
+.HomePage__Product > .HomePage__product_info > .Product__info {
+    font-size: 10px;
+    display: block;
+    color: white;
+}
+
+.HomePage__Product > .HomePage__product_info > .Product__info:nth-child(1) {
+    font-size: 20px;
+    display: inline-block;
+    color: white;
+}
+
+.HomePage__Product > .HomePage__Product_save_progress {
+    cursor: pointer;
+    height: 20px;
+    width: 90px;
+    font-size: 12px;
+    float: right;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+    margin: 10px 10px;
+}
+
+
+

@@ -1,0 +1,8 @@
+// Fix the validation bug, while moving back to some previous page
+
+// Also map the local Storage to the redux state and display the answered questions in the pae/
+
+// Start Coding the Node JS api and put the data in the mongoDb, which you already have.
+
+// Discuss about the auhtentication and the auhtorization concepts in the web app.
+

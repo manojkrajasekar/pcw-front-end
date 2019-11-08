@@ -1,7 +1,11 @@
 import React from 'react';
 import Pages from '../Pages';
 import SampleData from '../../SampleData';
+import ProgressSteps from '../ProgressSteps';
 import { Link } from 'react-router-dom';
+import Steps, { Step } from 'rc-steps';
+import "rc-steps/assets/index.css";
+import "rc-steps/assets/iconfont.css";
 // import NewData from '../../NewData';
 // import validateAllQuestions from '../../utils/validateAllQuestions';
 import './styles.css';
@@ -17,6 +21,7 @@ class HomePage extends React.Component {
         displayErrorMessage: [],
         shouldDisplayError: true,
         isSubmitDisabled: false,
+        isShowModal: false
     };
 
     renderNextPage = (pageNumber) => {
@@ -154,61 +159,109 @@ class HomePage extends React.Component {
         return isValid;
     }
 
+    showModal = () => {
+        this.setState({
+            isShowModal: true,
+        })
+        console.log('SHOW MODAL', this.state.isShowModal);
+    }
+
+    handleCloseModal = () => {
+        this.setState({
+            isShowModal: false,
+        })
+    }
+
     render() {
+
+        console.log('HOME PAGE DATA', SampleData.pages);
         let isDisabled = this.state.isDisabled;
         
         return (
-            <div className="HomePage">
-                <div className="Page__title">
+            <div className="HomePage">.
+                
+                <div className="HomePage__left">
+                    {this.state.isShowModal && <div className="Page__title--content-modal">
+                            <div 
+                                onClick={() => { this.handleCloseModal() }}
+                                className="close__Modal"
+                            >
+                                X
+                            </div>
+                            <div className="err_msg">
+                                Question Set Selected Too Soon
+                            </div>
+                            <div className="err_msg__content">
+                                You must first complete the previous set of questions before moving on to the selected set. If you have to leave the application before completing a set of questions, select the "Save Progress" button and you will be able to conduct your research and continue this process at your next login.
+                            </div>
+
+                        </div>
+                    }
                     {this.state.renderFinalPage 
-                        ? <div className="Page__title--content">
+                        ? <div  className="Page__title--content">
+                            
                             Attributes
                           </div>
-                        : <div className="Page__title--content">
-                            {SampleData.pages[this.state.pageNumber].order}. {SampleData.pages[this.state.pageNumber].name}
-                          </div>
-                    }
+                        : <Steps direction="vertical">
+                            {SampleData.pages.map((element) => {
+                                return <Step 
+                                            onClick={() => { this.showModal()}}
+                                            title={element.name} 
+                                            current={this.state.pageNumber}
+                                            size="small"
+                                            //status={element.order - 1 <= this.state.pageNumber && 'finish'}
+                                            className={`Page__title--content 
+                                                ${element.order - 1 === this.state.pageNumber && 'currentPage'}
+                                                ${element.order - 1 <= this.state.pageNumber && 'finish'}`
+                                            }
+                                        />
+                                })}
+                           </Steps>
+                        }
                 </div>
-                <Pages 
-                    pageData={SampleData.pages[this.state.pageNumber]}
-                    displayErrorMessage={this.state.displayErrorMessage}
-                    shouldDisplayError={this.state.shouldDisplayError}
-                    updateAnswers={(data) => { this.updateAnswers(data)}}
-                    dispalyFinalPage={this.state.renderFinalPage}
-                    finalPageData={this.state.collectedAttributes}
-                />
-                <div>
-                    <div className="HomePage__pagination">
-                        {SampleData.pages.map((item, index) => {
-                            const isCurrentPage = index === this.state.pageNumber ? true : false;
-                            if(index < this.state.pageNumber) {
-                               isDisabled = false;
-                            }
-                            const disableUserEvents = index - this.state.pageNumber <=1 ;
-                            return (
-                                <span
-                                    title={`${!disableUserEvents ? `Finish Page ${this.state.pageNumber+1} to Continue`:'' }`}
-                                    key={index}
-                                    onClick={() => { this.renderNextPage(index) }} 
-                                    className={`PageNumber__box ${isCurrentPage ? 'highlight': ' ' } ${isDisabled ? 'disabled': ' ' } 
-                                    ${!disableUserEvents ? 'disableUserEvents':'' }`}
-                                >
-                                    {index+1}
-                                </span>
-                            )
-                        })}
-                    </div>
-                    <div className="HomePage__footer--actions">
-                        <Link 
-                            className="Select__Category"
-                            to="/select-category">
-                            Back to Home
-                        </Link>
-                        <div 
-                            className={`HomePage__Submit`}
-                            onClick={() => { this.handleSubmit()}}
-                        >
-                            Submit
+               
+                <div className="Page__Questionnaire">
+                    <Pages 
+                        pageData={SampleData.pages[this.state.pageNumber]}
+                        displayErrorMessage={this.state.displayErrorMessage}
+                        shouldDisplayError={this.state.shouldDisplayError}
+                        updateAnswers={(data) => { this.updateAnswers(data)}}
+                        dispalyFinalPage={this.state.renderFinalPage}
+                        finalPageData={this.state.collectedAttributes}
+                    />
+                    <div>
+                        <div className="HomePage__pagination">
+                            {SampleData.pages.map((item, index) => {
+                                const isCurrentPage = index === this.state.pageNumber ? true : false;
+                                if(index < this.state.pageNumber) {
+                                isDisabled = false;
+                                }
+                                const disableUserEvents = index - this.state.pageNumber <=1 ;
+                                return (
+                                    <span
+                                        title={`${!disableUserEvents ? `Finish Page ${this.state.pageNumber+1} to Continue`:'' }`}
+                                        key={index}
+                                        onClick={() => { this.renderNextPage(index) }} 
+                                        className={`PageNumber__box ${isCurrentPage ? 'highlight': ' ' } ${isDisabled ? 'disabled': ' ' } 
+                                        ${!disableUserEvents ? 'disableUserEvents':'' }`}
+                                    >
+                                        {index+1}
+                                    </span>
+                                )
+                            })}
+                        </div>
+                        <div className="HomePage__footer--actions">
+                            <Link 
+                                className="Select__Category"
+                                to="/select-category">
+                                Back to Home
+                            </Link>
+                            <div 
+                                className={`HomePage__Submit`}
+                                onClick={() => { this.handleSubmit()}}
+                            >
+                                Submit
+                            </div>
                         </div>
                     </div>
                 </div>

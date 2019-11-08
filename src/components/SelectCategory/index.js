@@ -43,6 +43,26 @@ class SelectCategory extends React.Component {
                     </Route>
                     <Switch>
                         <Route exact path="/questions">
+                        <div className="Questions__Page--title">
+                            <div className="Questions__Page--walmart"/>
+                            <div className="Product__name">PCW</div>
+                        </div>
+                        <div className="HomePage__Product">
+                            <div className="HomePage__product_info">
+                                <span className="Product__info">Milkey Milk Drink</span>
+                                <span className="Product__info">Cows Came Home, LLC</span>
+                                <span className="Product__info">John Anderson - US</span>
+                            </div>
+                            <div className="HomePage__Product_save_progress">
+                                Previous Step
+                            </div>
+                            <div className="HomePage__Product_save_progress">
+                                Save Progress
+                            </div>
+                            <div className="HomePage__Product_save_progress">
+                                Next Step
+                            </div>
+                        </div>
                             <HomePage />
                         </Route>
                     </Switch>
