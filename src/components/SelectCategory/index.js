@@ -48,6 +48,7 @@ class SelectCategory extends React.Component {
                             <div className="Product__name">PCW</div>
                         </div>
                         <div className="HomePage__Product">
+                            <div className="HomePage__Product__code"/>
                             <div className="HomePage__product_info">
                                 <span className="Product__info">Milkey Milk Drink</span>
                                 <span className="Product__info">Cows Came Home, LLC</span>
