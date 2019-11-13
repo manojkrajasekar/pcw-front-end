@@ -12,9 +12,6 @@ const validateAllQuestions = (answers) => {
     SampleData.pages.map((element) => {
         totalQUestions += element.questions.length
     })
-    console.log('QUESTIONS LENGTH', SampleData.pages);
-    console.log('ANSWERS LENGTH:', answersData.length);
-
     return totalQUestions === answersData.length ? true : false;
 }
 

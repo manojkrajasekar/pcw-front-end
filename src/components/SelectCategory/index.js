@@ -2,7 +2,8 @@ import React from 'react';
 import Select from 'react-select';
 import HomePage from '../../components/HomePage';
 import { Switch, BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import './styles.css';
+// import './styles.css';
+import './stylebc.css';
 
 class SelectCategory extends React.Component {
 
@@ -48,20 +49,21 @@ class SelectCategory extends React.Component {
                             <div className="Product__name">PCW</div>
                         </div>
                         <div className="HomePage__Product">
-                            <div className="HomePage__Product__code"/>
-                            <div className="HomePage__product_info">
-                                <span className="Product__info">Milkey Milk Drink</span>
-                                <span className="Product__info">Cows Came Home, LLC</span>
-                                <span className="Product__info">John Anderson - US</span>
+                            <div className="HomePage__Product_container">
+                                <div className="HomePage__bardCode" />
+                                <div className="HomePage__product_info">
+                                    <div className="Product__info">Milkey Milk Drink</div>
+                                    <div className="Product__info">Cows Came Home, LLC</div>
+                                    <div className="Product__info">John Anderson - US</div>
+                                </div>
                             </div>
-                            <div className="HomePage__Product_save_progress">
-                                Previous Step
-                            </div>
+                           <Link 
+                                className="HomePage__Product_save_progress"
+                                to="/select-category">
+                                Back to Home
+                            </Link>
                             <div className="HomePage__Product_save_progress">
                                 Save Progress
-                            </div>
-                            <div className="HomePage__Product_save_progress">
-                                Next Step
                             </div>
                         </div>
                             <HomePage />

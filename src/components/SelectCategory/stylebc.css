@@ -22,10 +22,11 @@
 }
 
 .Questions__Page--title {
+    border: 1px solid red;
     display: flex;
     justify-content: flex-start;
     width: 100%;
-    height: 35px;
+    height: 38px;
     background: #041E42 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
     border: 1px solid #041E42;
@@ -34,8 +35,8 @@
 
 .Questions__Page--title > .Questions__Page--walmart {
     width: 12%;
-    height: 50px;
-    margin-left: 150px;
+    height: 40px;
+    margin-left: 100px;
     background-size: contain;
     background-repeat: no-repeat;
     /* border: 1px solid red; */
@@ -44,7 +45,8 @@
 }
 
 .Questions__Page--title > .Product__name {
-    margin-top: 13px;
+    
+    margin-top: 10px;
     width: 10%;
     height: 50px;
     font: Bold 19px/20px Roboto;
@@ -128,16 +130,20 @@
 
 .rc-steps.rc-steps-vertical {
 	background-color: #fff;
+	
 }
 
 .rc-steps-item.rc-steps-item-process.Page__title--content.rc-steps-item-active
 .rc-steps-item.rc-steps-item-wait.Page__title--content.false.finish {
 	background-color: /* #0065FF */ #FFFFFF;
+	
 }
 
 .rc-steps-item.rc-steps-item-wait.Page__title--content.currentPage.finish,
 .rc-steps-item.rc-steps-item-process.Page__title--content.currentPage.finish.rc-steps-item-active {
 	background-color: #0065FF;
+	z-index: 5;
+	
 }
 
 .rc-steps-item.rc-steps-item-process.Page__title--content.currentPage,
@@ -146,6 +152,8 @@
 	padding: 4px 0 1px 4px;
 	border-radius: 20px;
 	text-align: left;
+	z-index: 5;
+	
 }
 
 .rc-steps-item.rc-steps-item-process.Page__title--content,
@@ -160,12 +168,12 @@
 		.rc-steps-item-process.currentPage .rc-steps-item-icon,
 		.rc-steps-item.rc-steps-item-process.Page__title--content.currentPage.finish.rc-steps-item-active .rc-steps-item-icon		{
 			background-color: #FFFFFF;
-			border: none;
+			border: none;	
 		}
 		/*-- Not Completed Step Circle Icon --*/
 		.rc-steps-item.false.false .rc-steps-item-icon {
 			background-color: #FFFFFF;
-			border: 4px solid #ADADAD;
+			border: 4px solid #ADADAD;	
 		}
 		
 		.rc-steps-item.rc-steps-item-process.Page__title--content.rc-steps-item-active .rc-steps-item-icon,
@@ -173,15 +181,60 @@
 		.rc-steps-item.rc-steps-item-wait.Page__title--content.false.finish .rc-steps-item-icon		{
 			background-color: #0065FF;
 			border: none;
+			z-index: 100;
 		}
 	.rc-steps-vertical .rc-steps-item-process .rc-steps-item-title,
 	.rc-steps-item.rc-steps-item-wait.Page__title--content.false.finish .rc-steps-item-title,
 	.rc-steps-item.rc-steps-item-process.Page__title--content.rc-steps-item-active .rc-steps-item-title {
-		color: #000000;
+		color: #000000;	
 	}
 	.rc-steps-item.rc-steps-item-wait.Page__title--content.currentPage.finish .rc-steps-item-title {
-		color: #FFFFFF;
+		color: #FFFFFF;	
 	}
+	
+	
+.Page__title--content.finish {
+	
+}
+.Page__title--content.currentPage {
+    color: #FFFFFF;
+    padding: 1px;
+    background-color: #3eb0f7;
+}
+
+.rc-steps-item.rc-steps-item-process.Page__title--content.currentPage.finish.rc-steps-item-active .rc-steps-item-title {
+	color: #FFFFFF;
+}
+
+.rc-steps-vertical .rc-steps-item-tail {
+	top: -5px;
+	width: 7px;
+	
+}
+
+.rc-steps-item.rc-steps-item-process.Page__title--content  .rc-steps-item-tail,
+.rc-steps-item.rc-steps-item-process.Page__title--content  .rc-steps-item-tail:after,
+.rc-steps-item.rc-steps-item-wait.Page__title--content.false.finish .rc-steps-item-tail,
+.rc-steps-item.rc-steps-item-wait.Page__title--content.false.finish .rc-steps-item-tail:after,
+.rc-steps-item.rc-steps-item-wait.Page__title--content.currentPage.finish .rc-steps-item-tail,
+.rc-steps-item.rc-steps-item-wait.Page__title--content.currentPage.finish .rc-steps-item-tail:after,
+.rc-steps-item.rc-steps-item-process.Page__title--content.currentPage.finish.rc-steps-item-active .rc-steps-item-tail,
+.rc-steps-item.rc-steps-item-process.Page__title--content.currentPage.finish.rc-steps-item-active .rc-steps-item-tail:after {
+	background-color: #0065FF; border: 1px solid #0065FF; Z-index: -5; 
+}
+
+.rc-steps-item.rc-steps-item-process.Page__title--content  .rc-steps-item-tail:after,
+.rc-steps-item.rc-steps-item-wait.Page__title--content.false.finish .rc-steps-item-tail:after,
+.rc-steps-item.rc-steps-item-wait.Page__title--content.currentPage.finish .rc-steps-item-tail:after,
+.rc-steps-item.rc-steps-item-process.Page__title--content.currentPage.finish.rc-steps-item-active .rc-steps-item-tail:after
+	{	 }
+.rc-steps-item.rc-steps-item-process.Page__title--content  .rc-steps-item-tail,
+.rc-steps-item.rc-steps-item-wait.Page__title--content.false.finish .rc-steps-item-tail,
+.rc-steps-item.rc-steps-item-wait.Page__title--content.currentPage.finish .rc-steps-item-tail,
+.rc-steps-item.rc-steps-item-process.Page__title--content.currentPage.finish.rc-steps-item-active .rc-steps-item-tail
+	{	 }
+.rc-steps-vertical .rc-steps-item.rc-steps-item-wait.Page__title--content.false.false .rc-steps-item-tail:after
+	{ margin-left: -1px; margin-top: 5px; width: 5px; }
 
 
 	

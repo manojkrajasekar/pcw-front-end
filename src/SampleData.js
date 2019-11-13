@@ -5,7 +5,7 @@ const SampleData = {
               {
                   "_id": "FG1",
                   "order": 1,
-                  "value": "What market are you listing your product for?",
+                  "value": "What market are you listing your product for ?",
                   "type": "checkBox",
                   "pageId": "FG",
                   "answers": [
@@ -33,7 +33,7 @@ const SampleData = {
               {
                   "_id": "FG2",
                   "order": 2,
-                  "value": "What sub-category is your product?",
+                  "value": "What sub-category is your product ?",
                   "type": "radio",
                   "pageId": "FG",
                   "answers": [
@@ -86,7 +86,7 @@ const SampleData = {
               {
                   "_id": "FG3",
                   "order": 3,
-                  "value": "Is the product part of a hierarchy?",
+                  "value": "Is the product part of a hierarchy ?",
                   "type": "radio",
                   "pageId": "FG",
                   "answers": [
@@ -132,7 +132,7 @@ const SampleData = {
               {
                   "_id": "FC1",
                   "order": 1,
-                  "value": "Is it important the retailer knows the brand owner of your product?",
+                  "value": "Is it important the retailer knows the brand owner of your product ?",
                   "type": "radio",
                   "pageId": "FC",
                   "answers": [
@@ -154,7 +154,7 @@ const SampleData = {
               {
                   "_id": "FC2",
                   "order": 2,
-                  "value": "Do you wish to communicate the owner of the manufacturing process to the retailer?",
+                  "value": "Do you wish to communicate the owner of the manufacturing process to the retailer ?",
                   "type": "radio",
                   "pageId": "FC",
                   "answers": [
@@ -176,7 +176,7 @@ const SampleData = {
               {
                   "_id": "FC3",
                   "order": 3,
-                  "value": "Do you wish to communicate to the buyer the contact's postal/physical address for business processes or consumer information?",
+                  "value": "Do you wish to communicate to the buyer the contact's postal/physical address for business processes or consumer information ?",
                   "type": "radio",
                   "pageId": "FC",
                   "answers": [
@@ -199,7 +199,7 @@ const SampleData = {
               {
                   "_id": "FC4",
                   "order": 4,
-                  "value": "Do you wish to communicate to the buyer the contact's means of contacting for business processes or consumer information?",
+                  "value": "Do you wish to communicate to the buyer the contact's means of contacting for business processes or consumer information ?",
                   "type": "radio",
                   "pageId": "FC",
                   "answers": [
@@ -228,7 +228,7 @@ const SampleData = {
               {
                   "_id": "FI1",
                   "order": 1,
-                  "value": "Do you wish to communicate additional product identification apart from the GTIN (e.g. PLU)?",
+                  "value": "Do you wish to communicate additional product identification apart from the GTIN (e.g. PLU) ?",
                   "type": "radio",
                   "pageId": "FI",
                   "answers": [
@@ -250,7 +250,7 @@ const SampleData = {
               {
                   "_id": "FI2",
                   "order": 2,
-                  "value": "Is this product substituting, (temporarily) replacing, equivalent to, another product you are listing with the retailer?",
+                  "value": "Is this product substituting, (temporarily) replacing, equivalent to, another product you are listing with the retailer ?",
                   "type": "radio",
                   "pageId": "FI",
                   "answers": [
@@ -272,7 +272,7 @@ const SampleData = {
               {
                   "_id": "FI3",
                   "order": 3,
-                  "value": "Do you know the classification of your product based on an alternate classification scheme to GS1 GPC?",
+                  "value": "Do you know the classification of your product based on an alternate classification scheme to GS1 GPC ?",
                   "type": "radio",
                   "pageId": "FI",
                   "answers": [
@@ -294,7 +294,7 @@ const SampleData = {
               {
                   "_id": "FI4",
                   "order": 4,
-                  "value": "Do you communicate the classification system used by customs to apply tariffs on your product?",
+                  "value": "Do you communicate the classification system used by customs to apply tariffs on your product ?",
                   "type": "radio",
                   "pageId": "FI",
                   "answers": [
@@ -316,7 +316,7 @@ const SampleData = {
               {
                   "_id": "FI5",
                   "order": 5,
-                  "value": "Do you provide additional variants to help define the product? (e.g. colour, style, fragrance)",
+                  "value": "Do you provide additional variants to help define the product ? (e.g. colour, style, fragrance)",
                   "type": "radio",
                   "pageId": "FI",
                   "answers": [
@@ -337,7 +337,7 @@ const SampleData = {
               {
                   "_id": "FI6",
                   "order": 6,
-                  "value": "Do you provide the buyer a short product name for the shelf tag and POS receipt?",
+                  "value": "Do you provide the buyer a short product name for the shelf tag and POS receipt ?",
                   "type": "radio",
                   "pageId": "FI",
                   "answers": [
@@ -358,7 +358,7 @@ const SampleData = {
               {
                   "_id": "FI7",
                   "order": 7,
-                  "value": "Do you provide a sub-brand for your product?",
+                  "value": "Do you provide a sub-brand for your product ?",
                   "type": "radio",
                   "pageId": "FI",
                   "answers": [
@@ -386,7 +386,7 @@ const SampleData = {
               {
                   "_id": "FP1",
                   "order": 1,
-                  "value": "Is your product display ready or non-assembled packaged?",
+                  "value": "Is your product display ready or non-assembled packaged ?",
                   "type": "radio",
                   "pageId": "FP",
                   "answers": [
@@ -407,7 +407,7 @@ const SampleData = {
               {
                   "_id": "FP2",
                   "order": 2,
-                  "value": "Does your product have returnable packaging?",
+                  "value": "Does your product have returnable packaging ?",
                   "type": "radio",
                   "pageId": "FP",
                   "answers": [
@@ -437,7 +437,7 @@ const SampleData = {
               {
                   "_id": "FL1",
                   "order": 1,
-                  "value": "Is your product certified by an external organisation?",
+                  "value": "Is your product certified by an external organisation ?",
                   "type": "radio",
                   "pageId": "FL",
                   "answers": [
@@ -458,7 +458,7 @@ const SampleData = {
               {
                   "_id": "FL2",
                   "order": 2,
-                  "value": "Do you communicate the global, national, local accreditation of your product to the buyer and/or consumer?",
+                  "value": "Do you communicate the global, national, local accreditation of your product to the buyer and/or consumer ?",
                   "type": "radio",
                   "pageId": "FL",
                   "answers": [
@@ -479,7 +479,7 @@ const SampleData = {
               {
                   "_id": "FL3",
                   "order": 3,
-                  "value": "Do you communicate to the buyer the regulation to which the product status is applicable and whether or not the buyer can sell or distribute the product?",
+                  "value": "Do you communicate to the buyer the regulation to which the product status is applicable and whether or not the buyer can sell or distribute the product ?",
                   "type": "radio",
                   "pageId": "FL",
                   "answers": [
@@ -500,7 +500,7 @@ const SampleData = {
               {
                   "_id": "FL4",
                   "order": 4,
-                  "value": "Does local regulation require you to provide information to the consumer and buyer on the type of material the product packaging is made of?",
+                  "value": "Does local regulation require you to provide information to the consumer and buyer on the type of material the product packaging is made of ?",
                   "type": "radio",
                   "pageId": "FL",
                   "answers": [
@@ -521,7 +521,7 @@ const SampleData = {
               {
                   "_id": "FL5",
                   "order": 5,
-                  "value": "Does your product label notify buyers and consumers about legal information?",
+                  "value": "Does your product label notify buyers and consumers about legal information ?",
                   "type": "radio",
                   "pageId": "FL",
                   "answers": [
@@ -549,7 +549,7 @@ const SampleData = {
               {
                   "_id": "FS1",
                   "order": 1,
-                  "value": "Do you provide instructions to the consumer on storing your product?",
+                  "value": "Do you provide instructions to the consumer on storing your product ?",
                   "type": "radio",
                   "pageId": "FS",
                   "answers": [
@@ -570,7 +570,7 @@ const SampleData = {
               {
                   "_id": "FS2",
                   "order": 2,
-                  "value": "Do you provide instructions to the consumer on using the product?",
+                  "value": "Do you provide instructions to the consumer on using the product ?",
                   "type": "radio",
                   "pageId": "FS",
                   "answers": [
@@ -591,7 +591,7 @@ const SampleData = {
               {
                   "_id": "FS3",
                   "order": 3,
-                  "value": "Does your product label give the consumer instructions on how to prepare the product before serving?",
+                  "value": "Does your product label give the consumer instructions on how to prepare the product before serving ?",
                   "type": "radio",
                   "pageId": "FS",
                   "answers": [
@@ -613,7 +613,7 @@ const SampleData = {
               {
                   "_id": "FS4",
                   "order": 4,
-                  "value": "Does your product label give the consumer a serving suggestion?",
+                  "value": "Does your product label give the consumer a serving suggestion ?",
                   "type": "radio",
                   "pageId": "FS",
                   "answers": [
@@ -634,7 +634,7 @@ const SampleData = {
               {
                   "_id": "FS5",
                   "order": 5,
-                  "value": "Does your product indicate an age range for use?",
+                  "value": "Does your product indicate an age range for use ?",
                   "type": "radio",
                   "pageId": "FS",
                   "answers": [
@@ -662,7 +662,7 @@ const SampleData = {
               {
                   "_id": "FN1",
                   "order": 1,
-                  "value": "Does your packaging mention allergens on the label?",
+                  "value": "Does your packaging mention allergens on the label ?",
                   "type": "radio",
                   "pageId": "FN",
                   "answers": [
@@ -685,7 +685,7 @@ const SampleData = {
               {
                   "_id": "FN2",
                   "order": 2,
-                  "value": "Do you know the dietary regime your product belongs to?",
+                  "value": "Do you know the dietary regime your product belongs to ?",
                   "type": "radio",
                   "pageId": "FN",
                   "answers": [
@@ -706,7 +706,7 @@ const SampleData = {
               {
                   "_id": "FN3",
                   "order": 3,
-                  "value": "Do you have an ingredient statement on your product label?",
+                  "value": "Do you have an ingredient statement on your product label ?",
                   "type": "radio",
                   "pageId": "FN",
                   "answers": [
@@ -727,7 +727,7 @@ const SampleData = {
               {
                   "_id": "FN4",
                   "order": 4,
-                  "value": "Does your product label contain a food panel?",
+                  "value": "Does your product label contain a food panel ?",
                   "type": "radio",
                   "pageId": "FN",
                   "answers": [
@@ -761,7 +761,7 @@ const SampleData = {
               {
                   "_id": "FCL1",
                   "order": 1,
-                  "value": "Do you wish to mention the organic status of your product?",
+                  "value": "Do you wish to mention the organic status of your product ?",
                   "type": "radio",
                   "pageId": "FCL",
                   "answers": [
@@ -783,7 +783,7 @@ const SampleData = {
               {
                   "_id": "FCL2",
                   "order": 2,
-                  "value": "Do you wish to communicate the GMO status of your product?",
+                  "value": "Do you wish to communicate the GMO status of your product ?",
                   "type": "radio",
                   "pageId": "FCL",
                   "answers": [
@@ -804,7 +804,7 @@ const SampleData = {
               {
                   "_id": "FCL3",
                   "order": 3,
-                  "value": "Do you make any health and/or nutritional claims about your product?",
+                  "value": "Do you make any health and/or nutritional claims about your product ?",
                   "type": "radio",
                   "pageId": "FCL",
                   "answers": [
@@ -834,7 +834,7 @@ const SampleData = {
               {
                   "_id": "FPR1",
                   "order": 1,
-                  "value": "Do you know when your product will no longer be available for ordering?",
+                  "value": "Do you know when your product will no longer be available for ordering ?",
                   "type": "radio",
                   "pageId": "FPR",
                   "answers": [
@@ -855,7 +855,7 @@ const SampleData = {
               {
                   "_id": "FPR2",
                   "order": 2,
-                  "value": "Does your product package contain a date to allow consumers to make a decision (e.g. Best before, best if used by)?",
+                  "value": "Does your product package contain a date to allow consumers to make a decision (e.g. Best before, best if used by) ?",
                   "type": "radio",
                   "pageId": "FPR",
                   "answers": [
@@ -876,7 +876,7 @@ const SampleData = {
               {
                   "_id": "FPR3",
                   "order": 3,
-                  "value": "Do you wish to communicate the process through which your product has been grown, cultivated, reared and/or raised?",
+                  "value": "Do you wish to communicate the process through which your product has been grown, cultivated, reared and/or raised ?",
                   "type": "radio",
                   "pageId": "FPR",
                   "answers": [
@@ -897,7 +897,7 @@ const SampleData = {
               {
                   "_id": "FPR4",
                   "order": 4,
-                  "value": "Do you provide the buyer with information to ensure quality and inventory workflows/business processes?",
+                  "value": "Do you provide the buyer with information to ensure quality and inventory workflows/business processes ?",
                   "type": "radio",
                   "pageId": "FPR",
                   "answers": [
@@ -919,7 +919,7 @@ const SampleData = {
               {
                   "_id": "FPR5",
                   "order": 5,
-                  "value": "Do you provide digital assets (e.g. images) to the buyer for your product?",
+                  "value": "Do you provide digital assets (e.g. images) to the buyer for your product ?",
                   "type": "radio",
                   "pageId": "FPR",
                   "answers": [
@@ -951,7 +951,7 @@ const SampleData = {
               {
                   "_id": "FO1",
                   "order": 1,
-                  "value": "Do you communicate the consumer key features or benefits of your product?",
+                  "value": "Do you communicate the consumer key features or benefits of your product ?",
                   "type": "radio",
                   "pageId": "FO",
                   "answers": [
@@ -995,7 +995,7 @@ const SampleData = {
               {
                   "_id": "FO3",
                   "order": 3,
-                  "value": "Does your product have the retail price on it?",
+                  "value": "Does your product have the retail price on it ?",
                   "type": "radio",
                   "pageId": "FO",
                   "answers": [
@@ -1016,7 +1016,7 @@ const SampleData = {
               {
                   "_id": "FO4",
                   "order": 4,
-                  "value": "Do you provide content information of your product?",
+                  "value": "Do you provide content information of your product ?",
                   "type": "radio",
                   "pageId": "FO",
                   "answers": [
@@ -1039,7 +1039,7 @@ const SampleData = {
               {
                   "_id": "FO5",
                   "order": 5,
-                  "value": "Do you provide the consumer with information around the condition (e.g. thawed, frozen) of your product?",
+                  "value": "Do you provide the consumer with information around the condition (e.g. thawed, frozen) of your product ?",
                   "type": "radio",
                   "pageId": "FO",
                   "answers": [
@@ -1062,15 +1062,15 @@ const SampleData = {
               }
           ],
           "id": "FO",
-          "name": "Process",
-          "order": "9"
+          "name": "Other",
+          "order": "10"
       },
       {
           "questions": [
               {
                   "_id": "FRQ1",
                   "order": 1,
-                  "value": "Does the product contain or is fruit juice?",
+                  "value": "Does the product contain or is fruit juice ?",
                   "type": "radio",
                   "pageId": "FRQ",
                   "answers": [
@@ -1097,7 +1097,7 @@ const SampleData = {
               {
                   "_id": "FRQ2",
                   "order": 2,
-                  "value": "Does the packaging of your product mention the maximum Number of smallest units per package?",
+                  "value": "Does the packaging of your product mention the maximum Number of smallest units per package ?",
                   "type": "radio",
                   "pageId": "FRQ",
                   "answers": [
@@ -1114,11 +1114,11 @@ const SampleData = {
                           "attributes": []
                       }
                   ],
-                //   "derivedFrom": [
-                //       [
-                //           "FG1.A2"
-                //       ]
-                //   ]
+                  "derivedFrom": [
+                      [
+                          "FG1.A2"
+                      ]
+                  ],
                   "derivedFrom": [
                     [
                         "FG1.A2",
@@ -1138,7 +1138,7 @@ const SampleData = {
               {
                   "_id": "FRQ3",
                   "order": 3,
-                  "value": "Does the packaging of the product contain a lot and/or batch number?",
+                  "value": "Does the packaging of the product contain a lot and/or batch number ?",
                   "type": "radio",
                   "pageId": "FRQ",
                   "answers": [
@@ -1164,7 +1164,7 @@ const SampleData = {
               {
                   "_id": "FRQ4",
                   "order": 4,
-                  "value": "Does the packaging of the product mention whether the product is or is not compliant to a regulation?",
+                  "value": "Does the packaging of the product mention whether the product is or is not compliant to a regulation ?",
                   "type": "radio",
                   "pageId": "FRQ",
                   "answers": [
@@ -1190,7 +1190,7 @@ const SampleData = {
               {
                   "_id": "FRQ5",
                   "order": 5,
-                  "value": "Do you provide the buyer with a marketing description focused on the brand of the product? (e.g. history of the brand)",
+                  "value": "Do you provide the buyer with a marketing description focused on the brand of the product ? (e.g. history of the brand)",
                   "type": "radio",
                   "pageId": "FRQ",
                   "answers": [
@@ -1216,7 +1216,7 @@ const SampleData = {
               {
                   "_id": "FRQ6",
                   "order": 6,
-                  "value": "Does the packaging have special features?",
+                  "value": "Does the packaging have special features ?",
                   "type": "radio",
                   "pageId": "FRQ",
                   "answers": [
@@ -1242,7 +1242,7 @@ const SampleData = {
               {
                   "_id": "FRQ7",
                   "order": 7,
-                  "value": "Does the packaging provide an exact statement about the place of origin of the product?",
+                  "value": "Does the packaging provide an exact statement about the place of origin of the product ?",
                   "type": "radio",
                   "pageId": "FRQ",
                   "answers": [
@@ -1268,7 +1268,7 @@ const SampleData = {
               {
                   "_id": "FRQ8",
                   "order": 8,
-                  "value": "Do you identify to the consumer the prescribed, regulated or generic name of the product?",
+                  "value": "Do you identify to the consumer the prescribed, regulated or generic name of the product ?",
                   "type": "radio",
                   "pageId": "FRQ",
                   "answers": [
@@ -1294,7 +1294,7 @@ const SampleData = {
               {
                   "_id": "FRQ9",
                   "order": 9,
-                  "value": "Is the product is or does it contain dangerous goods?",
+                  "value": "Is the product is or does it contain dangerous goods ?",
                   "type": "radio",
                   "pageId": "FRQ",
                   "answers": [
@@ -1320,7 +1320,7 @@ const SampleData = {
           ],
           "id": "FRQ",
           "name": "Regional Questions",
-          "order": "10"
+          "order": "11"
       }
   ],
   "_id": "F",

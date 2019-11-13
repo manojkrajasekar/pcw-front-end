@@ -78,8 +78,7 @@ class HomePage extends React.Component {
         const answersData = this.props.answersData;
         
         const pageId = SampleData.pages[pageNumber].id;
-        console.log('PAGE ID:', SampleData.pages);
-
+        
         const numberOfPages = SampleData.pages[pageNumber];
         
         let answeredQuestions = [];
@@ -159,11 +158,12 @@ class HomePage extends React.Component {
         return isValid;
     }
 
-    showModal = () => {
-        this.setState({
-            isShowModal: true,
-        })
-        console.log('SHOW MODAL', this.state.isShowModal);
+    showModal = (order, pageNumber) => {
+        if(order > pageNumber) {
+            this.setState({
+                isShowModal: true,
+            })
+        }
     }
 
     handleCloseModal = () => {
@@ -173,13 +173,12 @@ class HomePage extends React.Component {
     }
 
     render() {
-
-        console.log('HOME PAGE DATA', SampleData.pages);
+        
         let isDisabled = this.state.isDisabled;
+        const enableSubmitButton = this.state.pageNumber === SampleData.pages.length - 1;
         
         return (
             <div className="HomePage">.
-                
                 <div className="HomePage__left">
                     {this.state.isShowModal && <div className="Page__title--content-modal">
                             <div 
@@ -197,19 +196,14 @@ class HomePage extends React.Component {
 
                         </div>
                     }
-                    {this.state.renderFinalPage 
-                        ? <div  className="Page__title--content">
-                            
-                            Attributes
-                          </div>
-                        : <Steps direction="vertical">
+                    
+                        <Steps direction="vertical">
                             {SampleData.pages.map((element) => {
                                 return <Step 
-                                            onClick={() => { this.showModal()}}
+                                            onClick={() => { this.showModal(element.order, this.state.pageNumber)}}
                                             title={element.name} 
                                             current={this.state.pageNumber}
                                             size="small"
-                                            //status={element.order - 1 <= this.state.pageNumber && 'finish'}
                                             className={`Page__title--content 
                                                 ${element.order - 1 === this.state.pageNumber && 'currentPage'}
                                                 ${element.order - 1 <= this.state.pageNumber && 'finish'}`
@@ -217,11 +211,11 @@ class HomePage extends React.Component {
                                         />
                                 })}
                            </Steps>
-                        }
+                    
                 </div>
                
                 <div className="Page__Questionnaire">
-                    <Pages 
+                    <Pages
                         pageData={SampleData.pages[this.state.pageNumber]}
                         displayErrorMessage={this.state.displayErrorMessage}
                         shouldDisplayError={this.state.shouldDisplayError}
@@ -231,6 +225,10 @@ class HomePage extends React.Component {
                     />
                     <div>
                         <div className="HomePage__pagination">
+                            <span
+                                className={`HomePage__Submit`}
+                                onClick={() => { this.renderNextPage(this.state.pageNumber-1) }}>Previous Page
+                            </span>
                             {SampleData.pages.map((item, index) => {
                                 const isCurrentPage = index === this.state.pageNumber ? true : false;
                                 if(index < this.state.pageNumber) {
@@ -249,15 +247,12 @@ class HomePage extends React.Component {
                                     </span>
                                 )
                             })}
-                        </div>
-                        <div className="HomePage__footer--actions">
-                            <Link 
-                                className="Select__Category"
-                                to="/select-category">
-                                Back to Home
-                            </Link>
-                            <div 
+                            <span
                                 className={`HomePage__Submit`}
+                                onClick={() => { this.renderNextPage(this.state.pageNumber+1) }}>Next Page
+                            </span>
+                            <div 
+                                className={`HomePage__Submit ${enableSubmitButton ? 'Enable':'Disable'}`}
                                 onClick={() => { this.handleSubmit()}}
                             >
                                 Submit

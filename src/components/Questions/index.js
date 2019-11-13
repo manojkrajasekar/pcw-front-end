@@ -2,6 +2,7 @@ import React from 'react';
 import './styles.css';
 
 import { saveAnswers } from '../../redux/actions';
+import StepZilla from 'react-stepzilla';
 import { connect } from 'react-redux';
 
 class Questions extends React.Component {
@@ -11,7 +12,6 @@ class Questions extends React.Component {
     }
 
     handleOptionChange = (event, questionData, questionId, pageId) => {
-        console.log('ANSWER DATA:', questionData);
         let answerId, attributes = [];
         questionData.answers.filter((element) => {
             if(element.value === event.target.value) {
@@ -64,14 +64,13 @@ class Questions extends React.Component {
         const questionStateData = this.props.questionsState;
         const derivedFrom = this.props.data.derivedFrom && this.props.data.derivedFrom[0][0];
         let answersArray = [];
-        
+
         for(let key in questionStateData) {
             questionStateData[key].map((element) => {
                 answersArray.push(element.answerId);
             })
         }
-        console.log('ANSWERS ARRAY:', answersArray)
-
+        
         let final = questionsData.derivedFrom && questionsData.derivedFrom.some((element) => {
             return element.every((item) => {
                 return answersArray.indexOf(item) !== -1;
@@ -88,16 +87,17 @@ class Questions extends React.Component {
             
         //     questionsData['showDerived'] = isMatch ? true : false; 
         // }
-        console.log('QUESTION: ', questionsData);
         
         return questionsData.derivedFrom ?
             ( 
                 questionsData.showDerived ? (
                     <div className="Question__container">
                     <div className="Question__content">
+                        {`${this.props.questionNumber+1}. `}
                         {questionsData.value}
                         {!this.props.shouldDisplayError && !this.props.displayErrorMessage.includes(questionsData._id) && 
                             <span className="Question__errorMessage">Please select an option !</span>
+                            
                         }
                     </div>
                    
@@ -112,6 +112,7 @@ class Questions extends React.Component {
                                         checked={this.isValueChecked(questionsData.pageId, this.props.data._id, item.value)}
                                         onChange={(event) => { this.handleOptionChange(event, this.props.data, this.props.data._id, questionsData.pageId)}}
                                     />
+                                    
                                     <label>{item.value}</label>
                                 </div>
                             )
@@ -122,9 +123,10 @@ class Questions extends React.Component {
             ) : (
                 <div className="Question__container">
                  <div className="Question__content">
+                     {`${this.props.questionNumber+1}. `}
                      {questionsData.value}
                      {!this.props.shouldDisplayError && !this.props.displayErrorMessage.includes(questionsData._id) && 
-                         <span className="Question__errorMessage">Please select an option !</span>
+                        <span className="Question__errorMessage">Answer this question</span>
                      }
                  </div>
                 
@@ -157,7 +159,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
     saveAnswers: (payload) => {
-        console.log('POST PAYLOAD:', payload);
         dispatch(saveAnswers(payload))
     } 
 })
