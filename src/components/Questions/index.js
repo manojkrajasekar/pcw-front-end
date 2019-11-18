@@ -96,7 +96,7 @@ class Questions extends React.Component {
                         {`${this.props.questionNumber+1}. `}
                         {questionsData.value}
                         {!this.props.shouldDisplayError && !this.props.displayErrorMessage.includes(questionsData._id) && 
-                            <span className="Question__errorMessage">Please select an option !</span>
+                            <span className="Question__errorMessage">Answer this Question !</span>
                             
                         }
                     </div>

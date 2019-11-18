@@ -1114,11 +1114,11 @@ const SampleData = {
                           "attributes": []
                       }
                   ],
-                  "derivedFrom": [
-                      [
-                          "FG1.A2"
-                      ]
-                  ],
+                //   "derivedFrom": [
+                //       [
+                //           "FG1.A2"
+                //       ]
+                //   ],
                   "derivedFrom": [
                     [
                         "FG1.A2",

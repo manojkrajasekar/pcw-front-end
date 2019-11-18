@@ -22,7 +22,13 @@ class Pages extends React.Component {
     }
     render() {
         const showModal = this.state.isShowModal || !this.props.shouldDisplayError;
-        
+        const totCount = this.props.pageData.questions.filter((item, index) => {
+            if(item.derivedFrom && item.showDerived) {
+                return item;
+            }
+        })
+
+        console.log('TOTAL COUNT', totCount)
         return (
             <div className="Page__Container">
                 {this.props.dispalyFinalPage ?
@@ -61,7 +67,8 @@ class Pages extends React.Component {
                                     return <Questions 
                                                 key={index} 
                                                 questionNumber={index}
-                                                data={item} 
+                                                data={item}
+                                                derivedCount={totCount.length}
                                                 updateAnswers={this.props.updateAnswers}
                                                 displayErrorMessage={this.props.displayErrorMessage}
                                                 shouldDisplayError={this.props.shouldDisplayError}
